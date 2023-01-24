@@ -2,17 +2,16 @@ package lomayd.springstudy02.domain.member.service;
 
 import lomayd.springstudy02.domain.member.Member;
 import lomayd.springstudy02.domain.member.repository.MemberRepository;
-import lomayd.springstudy02.domain.member.repository.MemoryMemberRepository;
 
 public class MemberServiceImpl implements MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
-    public void join(Member member){
-        memberRepository.save(member);
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
-    public Member findMember(Long memberId){
-        return memberRepository.findById(memberId);
-    }
+    public void join(Member member){memberRepository.save(member);}
+
+    public Member findMember(Long memberId){return memberRepository.findById(memberId);}
 }
