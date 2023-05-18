@@ -1,17 +1,20 @@
 package lomayd.springstudy02.domain.order.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import lomayd.springstudy02.domain.discount.DiscountPolicy;
-import lomayd.springstudy02.domain.discount.FixDiscountPolicy;
 import lomayd.springstudy02.domain.member.Member;
 import lomayd.springstudy02.domain.member.repository.MemberRepository;
-import lomayd.springstudy02.domain.member.repository.MemoryMemberRepository;
 import lomayd.springstudy02.domain.order.Order;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

@@ -1,8 +1,11 @@
 package lomayd.springstudy02.domain.discount;
 
+import org.springframework.stereotype.Component;
+
 import lomayd.springstudy02.domain.member.Grade;
 import lomayd.springstudy02.domain.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;

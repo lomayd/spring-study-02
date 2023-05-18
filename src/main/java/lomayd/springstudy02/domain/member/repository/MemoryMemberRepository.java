@@ -1,10 +1,13 @@
 package lomayd.springstudy02.domain.member.repository;
 
-import lomayd.springstudy02.domain.member.Member;
-
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
+import lomayd.springstudy02.domain.member.Member;
+
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
