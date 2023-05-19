@@ -1,0 +1,16 @@
+package lomayd.springstudy02.domain.log.logdemo;
+
+import org.springframework.stereotype.Service;
+
+import lomayd.springstudy02.domain.log.common.MyLogger;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class LogDemoService {
+    private final MyLogger myLogger;
+    
+    public void logic(String id) {
+        myLogger.log("service id = " + id);
+    }
+}
