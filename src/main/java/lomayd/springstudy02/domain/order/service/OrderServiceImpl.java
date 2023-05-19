@@ -7,6 +7,7 @@ import lomayd.springstudy02.domain.discount.DiscountPolicy;
 import lomayd.springstudy02.domain.member.Member;
 import lomayd.springstudy02.domain.member.repository.MemberRepository;
 import lomayd.springstudy02.domain.order.Order;
+import lomayd.springstudy02.global.annotation.MainDiscountPolicy;
 
 @Component
 public class OrderServiceImpl implements OrderService {
@@ -15,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
